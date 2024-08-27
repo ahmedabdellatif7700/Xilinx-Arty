@@ -17,10 +17,8 @@
 -- Additional Comments:
 -- 
 ----------------------------------------------------------------------------------
-
-
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -31,13 +29,18 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BUTTON_LED is
---  Port ( );
-end BUTTON_LED;
+ENTITY EXAMPLE IS
+    --  Port ( );
+    GENERIC (
+        Bits : int := 3); -- we will use this generic bits to define inputs and outputs
+    PORT (
+        A : IN STD_LOGIC_VECTOR(Bits - 1 DOWNTO 0);
+        B : IN STD_LOGIC_VECTOR(Bits - 1 DOWNTO 0);
+        C : OUT STD_LOGIC;
+    );
+END EXAMPLE;
 
-architecture Behavioral of BUTTON_LED is
-
-begin
-
-
-end Behavioral;
+ARCHITECTURE BEHAVE OF BUTTON_LED IS
+BEGIN
+    C <= A AND B;
+END BEHAVE;
