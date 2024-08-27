@@ -64,5 +64,8 @@ END BUTTON_LED;
 
 ARCHITECTURE BEHAVE OF BUTTON_LED IS
 BEGIN
+    -- Set the output of the LED's 
+    LED_OUT <= BUTTON_IN WHEN ENABLE = '0' ELSE
+        (OTHERS => '0');
 
 END BEHAVE;
