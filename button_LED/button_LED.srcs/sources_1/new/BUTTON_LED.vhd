@@ -41,6 +41,11 @@
 -- SIGNAL sig_H : SIGNED(3 DOWNTO 0) := "1011"; --5
 -- sig_G <= (OTHERS => '0');
 -- sig_F <= sig_G - 1; -- 
+
+-- --integers
+-- SIGNAL sig_I : integer range 0 to 255 := 0;
+-- SIGNAL sig_J : integer range 0 to 255 := 10;
+-- sig_I <= 4;
 ----------------------------------------------------------------------------------
 
 LIBRARY IEEE;
