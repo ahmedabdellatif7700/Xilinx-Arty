@@ -13,14 +13,14 @@ ENTITY Shift_Reg IS
         D : OUT STD_LOGIC;
         data_in : IN STD_LOGIC;
         clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
+        reset : IN STD_LOGIC
     );
 END Shift_Reg;
 
 -- Architecure
 ARCHITECTURE behaviour OF Shift_Reg IS
     -- defined signal 
-    SIGNAL A reg, B_reg : STD_LOGIC := '0';
+    SIGNAL A_reg, B_reg : STD_LOGIC := '0';
     SIGNAL C_reg, D_reg : STD_LOGIC := '0';
     -- begin architecure
 BEGIN
@@ -49,3 +49,4 @@ BEGIN
             END IF;
         END IF;
     END PROCESS reg_process;
+END behaviour;

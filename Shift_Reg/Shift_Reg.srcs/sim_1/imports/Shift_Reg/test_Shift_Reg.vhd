@@ -3,7 +3,7 @@ LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.numeric_std.ALL;
 
-ENTITY test OF test_Shift_Reg IS
+ENTITY test_Shift_Reg IS
     -- completely blank
 END;
 
@@ -17,7 +17,7 @@ ARCHITECTURE test OF test_Shift_Reg IS
             D : OUT STD_LOGIC;
             data_in : IN STD_LOGIC;
             reset : IN STD_LOGIC;
-            clock : IN STD_LOGIC;
+            clock : IN STD_LOGIC
         );
     END COMPONENT;
 
@@ -28,12 +28,12 @@ ARCHITECTURE test OF test_Shift_Reg IS
 
 BEGIN
     dev_to_test : Shift_reg
-    PORT MAP(A, B, C, D, data_in, reset, clk);
+    PORT MAP(A, B, C, D, data_in, reset, clock);
 
     clock_stimulus : PROCESS
     BEGIN
         WAIT FOR 10 ns;
-        clk <= NOT clk;
+        clock <= NOT clock;
     END PROCESS clock_stimulus;
 
     data_stimulus : PROCESS
