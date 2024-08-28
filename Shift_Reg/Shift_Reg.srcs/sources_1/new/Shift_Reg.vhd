@@ -12,7 +12,7 @@ ENTITY Shift_Reg IS
         C : OUT STD_LOGIC;
         D : OUT STD_LOGIC;
         data_in : IN STD_LOGIC;
-        clk : IN STD_LOGIC;
+        clock : IN STD_LOGIC;
         reset : IN STD_LOGIC
     );
 END Shift_Reg;
@@ -32,9 +32,9 @@ BEGIN
 
     -- Process that is used to shift the values 
     -- because we need this to happen on every clock cycle
-    reg_process : PROCESS (clk)
+    reg_process : PROCESS (clock)
     BEGIN
-        IF (rising_edge(clk)) THEN
+        IF (rising_edge(clock)) THEN
             IF (reset = '1') THEN
                 A_reg <= '0';
                 B_reg <= '0';
